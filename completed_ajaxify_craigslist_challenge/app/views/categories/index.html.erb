@@ -2,9 +2,9 @@
 
 <% @categories.each do |category| %>
 <h3>
-  <%= link_to category.name, category_articles_path(category) %><br>
+  <%= link_to category.name, category_articles_path(category), remote: true, id: 'show_form_link' %><br>
 </h3>
 <% end %>
 </ul>
 
-<h3 id="goal-2">Goal: Display category information on the bottom of the current page (on the click of a category)</h3>
+<h3 id="goal-2">Goal 1: Display category information on the current page (on the click of a category)</h3>

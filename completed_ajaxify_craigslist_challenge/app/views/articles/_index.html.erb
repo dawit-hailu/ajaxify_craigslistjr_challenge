@@ -1,0 +1,16 @@
+<h2>Recent Articles</h2>
+
+ <div>
+  <ul id="category_articles">
+  <% @category_articles.each do |article| %>
+    <li><%= link_to article.title, category_article_path(article, category_id: @category) %></li>
+    <%= link_to 'Delete article', category_article_path(@category, article), method: :delete %><br>
+    <%= link_to 'Edit article', edit_category_article_path(@category, article)%><br><br>
+  <% end %>
+  </ul>
+</div>
+
+<hr><br>
+<%= link_to 'Create new article', new_category_article_path(@category), remote: true, id: 'new_article_form' %><br>
+
+<h3 id="goal-2">Goal 2: Hide the new article link and display new article form on current page (on click of the link)</h3>
