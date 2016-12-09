@@ -1,0 +1,11 @@
+<p>
+  <h2><%= @article.title %></h2>
+  <strong>Description:</strong> <%= @article.body %><br>
+</p>
+
+<p>
+<%= link_to 'Delete Article', category_article_path(@category, @article), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<%= link_to 'Edit Article', edit_category_article_path(@category, @article) %><br>
+</p>
+
+<%= link_to 'Back', category_articles_path(@category) %>

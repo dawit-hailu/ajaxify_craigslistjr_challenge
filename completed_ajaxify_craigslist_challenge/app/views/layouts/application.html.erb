@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajaxify CraigslistJr Challenge</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= link_to 'Home Page', categories_path %> || <strong>Ajaxify CraigslistJr (in Rails) Challenge</strong>
+  <hr>
+    <%= yield %>
+  </body>
+</html>
