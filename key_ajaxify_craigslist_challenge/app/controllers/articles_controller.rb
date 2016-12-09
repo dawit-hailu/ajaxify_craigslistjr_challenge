@@ -24,19 +24,24 @@ end
 def create
   @category = Category.find(params[:category_id])
   @article = @category.articles.create(article_params)
- 
-  if @article.save
-    redirect_to category_articles_path
-  else 
-    render 'new'
-  end
+
+  respond_to do |format|
+    format.js
+    format.html {
+      if @article.save
+        redirect_to category_articles_path
+      else
+        render 'new'
+      end
+    }
+    end
 end
 
 def update
   @category = Category.find(params[:category_id])
   @article = Article.find(params[:id])
 
- 
+
   if @article.update(article_params)
     redirect_to category_article_path(@category, @article)
   else
