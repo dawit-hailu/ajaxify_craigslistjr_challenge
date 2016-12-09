@@ -1,4 +1,4 @@
-<%= form_for [:category, @article], remote: true, id: 'new_article_form' do |f| %>
+<%= form_for [:category, @article] do |f| %>
   
   <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -29,6 +29,6 @@
   </p>
 <% end %>
 
-<h3>Goal 3: Add new article to current page without redirecting</h3>
+<h3>Goal: Make changes to the current page without redirecting</h3>
 
 

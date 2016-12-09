@@ -25,15 +25,10 @@ def create
   @category = Category.find(params[:category_id])
   @article = @category.articles.create(article_params)
  
-  respond_to do |format|
-    format.html {
-      if @article.save
-        redirect_to category_articles_path
-      else 
-        render 'new'
-      end
-    }
-    format.js
+  if @article.save
+    redirect_to category_articles_path
+  else 
+    render 'new'
   end
 end
 
