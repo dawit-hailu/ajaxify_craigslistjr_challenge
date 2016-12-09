@@ -1,5 +1,5 @@
-<%= form_for [:category, @article] do |f| %>
-  
+<%= form_for [:category, @article], remote: true, id: 'article_form' do |f| %>
+
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
